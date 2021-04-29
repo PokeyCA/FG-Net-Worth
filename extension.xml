@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Please see the LICENSE.md file included with this distribution for attribution and copyright information. -->
+
+<root version='3.3' release='3'>
+	<properties>
+		<name>Net Worth</name>
+		<version>1.2</version>
+		<author>Derek Crumb, based on Total Encumbrance by bmos (Wil Thieme)</author>
+		<description>This extension calculates character wealth.</description>
+		<ruleset name="PFRPG" />
+		<ruleset name="PFRPG2" />
+		<ruleset name="3.5E" />
+		<ruleset name="4E" />
+	</properties>
+
+	<announcement text="PFRPG Net Worth v1.2:\rThis extension calculates character wealth." font="emotefont" />
+
+	<base>
+
+		<!-- Records -->
+		<includefile source="campaign/record_char_inventory.xml" />
+
+		<!-- Strings -->
+		<includefile source="strings/strings_net_worth.xml" />
+		<includefile source="strings/strings_options.xml" />
+
+		<!-- Scripts -->
+		<script name="LibNetWorth" file="scripts/lib_net_worth.lua" />
+		<script name="NetWorthOptions" file="scripts/nw_options.lua" />
+		<script name="InventoryCost" file="scripts/inventory_cost.lua" />
+	</base>
+</root>

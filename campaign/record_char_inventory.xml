@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+  Please see the LICENSE.md file included with this distribution for attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_inventory" merge="join">
+		<sheetdata>	
+	<!-- Coin Frame -->
+			<label name="coin_label" merge="replace">
+				<anchored to="coinframe" position="insidetopleft" offset="15,7" />
+				<static textres="char_label_money" />
+			</label>
+
+		<!-- Wealth Total -->
+			<stringu name="wealthtotal" source="coins.wealthtotal">
+				<anchored to="coinframe" position="insidetopright" offset="15,10" />
+				<readonly />
+				<script>
+					function onInit()
+						local nNetWorth = LibNetWorth.round(window.inventorytotal.getValue(), 2)
+						local sNetWorth = LibNetWorth.formatCurrency(nNetWorth)
+						setValue(Interface.getString('char_string_networth') .. ': ' .. sNetWorth .. ' gp')
+						onValueChanged()
+					end
+					function onValueChanged()
+						if getValue() == 'Net Worth: 0 gp' then setVisible(false)
+						else setVisible(true)
+						end
+					end
+				</script>
+			</stringu>
+			<basicnumber name="inventorytotal" source="coins.invtotalval">
+				<anchored to="coinframe" position="insidetopright" offset="15,23" />
+				<default>0</default>
+				<readonly />
+				<invisible />
+				<script>
+					function onValueChanged()
+						window.wealthtotal.onInit()
+					end
+				</script>
+			</basicnumber>
+		</sheetdata>
+	</windowclass>
+</root>
