@@ -5,16 +5,15 @@
 <root version='3.3' release='3'>
 	<properties>
 		<name>Net Worth</name>
-		<version>1.2</version>
+		<version>1.3</version>
 		<author>Derek Crumb, based on Total Encumbrance by bmos (Wil Thieme)</author>
 		<description>This extension calculates character wealth.</description>
 		<ruleset name="PFRPG" />
-		<ruleset name="PFRPG2" />
 		<ruleset name="3.5E" />
 		<ruleset name="4E" />
 	</properties>
 
-	<announcement text="PFRPG Net Worth v1.2:\rThis extension calculates character wealth." font="emotefont" />
+	<announcement text="PFRPG Net Worth v1.3:\rThis extension calculates character wealth." font="emotefont" />
 
 	<base>
 
